@@ -4,7 +4,14 @@
     </div>
 </template>
 
-<script>
+<script setup lang="ts">
+import { toRefs } from 'vue'
+
+interface Props {
+    theme ?: string
+}
+const props = defineProps<Props>()
+const { theme } = toRefs(props)
 
 </script>
 
@@ -16,9 +23,8 @@
 
     padding: 20px;
 
-    border-radius: 24px;
-    
     background-color: $color-white-000;
+    border-radius: 24px;
 }
 
 </style>
