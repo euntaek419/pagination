@@ -25,6 +25,7 @@
 <script setup lang="ts">
 import BasicLayout from "@components/atoms/layout/BasicLayout.vue"
 import BasicButton from '@components/atoms/button/BasicButton.vue'
+import { computed } from 'vue';
 
 const menu = [
     {
@@ -71,8 +72,8 @@ const menu = [
 ]
 
 const topMenu = computed(() => {
-    return menu.slice(0, 3)
-})
+    return menu.slice(0, 3);
+});
 const middleMenu = computed(() => {
     return menu.slice(3, 7)
 })
