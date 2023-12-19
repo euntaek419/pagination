@@ -37,8 +37,8 @@ const menu = [
         label: 'Index'
     },
     {
-        icon: 'Calender',
-        label: 'Calender'
+        icon: 'Calendar',
+        label: 'Calendar'
     },
     {
         icon: 'Jobs',
@@ -65,8 +65,8 @@ const menu = [
         label: 'Structure'
     },
     {
-        icon: 'Setting',
-        label: 'Setting'
+        icon: 'Settings',
+        label: 'Settings'
     },
 
 ]

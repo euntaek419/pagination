@@ -8,7 +8,7 @@
 import { toRefs } from 'vue'
 
 interface Props {
-    theme ?: string
+    theme?: string
 }
 const props = defineProps<Props>()
 const { theme } = toRefs(props)
