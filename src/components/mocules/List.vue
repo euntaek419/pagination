@@ -7,20 +7,21 @@
             <span class="duty">{{ data.userRole }}</span>
         </div>
         <div class="list__item">
-            <BarChart />
+            <BarChart :data="data.userResumeScore"/>
         </div>
         <div class="list__item">
-            <BarChart />
+            <BarChart :data="data.userSkillMatch"/>
         </div>
         <div class="list__item">
-            <div class="list__item__chip">{{ data.userSkill }}</div>
+            <div v-if="data.userSkill === 'Senior'" class="list__item__chip">{{ data.userSkill }}</div>
+            <div v-if="data.userSkill === 'Junior'" class="list__item__chip junior">{{ data.userSkill }}</div>
         </div>
     </div>
   
 </template>
 
 <script setup lang="ts">
-import BarChart from '@components/atoms/chart/BarChart copy.vue'
+import BarChart from '@components/atoms/chart/BarChart_.vue'
 import { toRefs } from 'vue'
 
 interface List {
@@ -105,6 +106,11 @@ const { data } = toRefs(props)
             color: $color-blue-000;
             background-color: rgba($color-blue-000, 0.1);
             border-radius: 12px;
+
+            &.junior{
+                color: orange;
+                background-color: rgba(orange, 0.1);
+            }
         }
     }
 }
