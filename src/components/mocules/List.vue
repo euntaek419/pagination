@@ -3,8 +3,8 @@
         <div class="list__avatar"></div>
         <div class="list__item">
             <img src="@/assets/images/egg.png" alt="" class="list__avatar__image" />
-            <span class="name">Marco</span>
-            <span class="duty">User Experience</span>
+            <span class="name">{{ data.userName }}</span>
+            <span class="duty">{{ data.userRole }}</span>
         </div>
         <div class="list__item">
             <BarChart />
@@ -13,7 +13,7 @@
             <BarChart />
         </div>
         <div class="list__item">
-            <div class="list__item__chip">Senior</div>
+            <div class="list__item__chip">{{ data.userSkill }}</div>
         </div>
     </div>
   
@@ -21,6 +21,23 @@
 
 <script setup lang="ts">
 import BarChart from '@components/atoms/chart/BarChart copy.vue'
+import { toRefs } from 'vue'
+
+interface List {
+    userName: string
+    userRole: string
+    userResumeScore: number
+    userSkillMatch: number
+    userSkill: string
+}
+
+interface Props {
+    data: List
+}
+
+const props = defineProps<Props>()
+const { data } = toRefs(props)
+
 </script>
 
 <style lang="scss" scoped>
