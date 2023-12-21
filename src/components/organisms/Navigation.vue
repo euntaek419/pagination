@@ -87,10 +87,12 @@ const bottomMenu = computed(() => {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
 
     width: 100%;
-    gap: 40px;
+    height: calc(70vh - 40px);
+    
+    gap: 14px;
 
     &__sub-menu{
         display: flex;
