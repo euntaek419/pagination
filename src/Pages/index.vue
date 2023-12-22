@@ -13,10 +13,10 @@
     </div>
 </template>
 
-<script setup leng="ts">
+<script setup lang="ts">
 import BasicLayout from '@components/atoms/layout/BasicLayout.vue'
-import Navigation from '@/components/organisms/Navigation.vue'
-import Notice from '@/components/organisms/Notice.vue'
+import Navigation from '@components/organisms/Navigation.vue'
+import Notice from '@components/organisms/Notice.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -28,15 +28,15 @@ import Notice from '@/components/organisms/Notice.vue'
     width: 100%;
     height: 100vh;
 
-    background-color: $color-black-900;
+    background-color: black; // TEST CODE
 
     &__container {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        width: 60vw;
-        height: 61vh;
+        width: 70vw;
+        height: 70vh;
 
         &__navigation {
             width: 20%;

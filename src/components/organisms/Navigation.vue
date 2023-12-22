@@ -1,79 +1,79 @@
 <template>
-  <BasicLayout :theme="'blue'">
-    <div class="navigation">
-        <div class="navigation__sub-menu">
-            <div class="navigation__sub-menu__button-box">
-                <BasicButton v-for="item in topMenu" :key="item.label" :data="item"/>
+    <BasicLayout :theme="'blue'">
+        <div class="navigation">
+            <div class="navigation__sub-menu">
+                <div class="navigation__sub-menu__button-box">
+                    <BasicButton v-for="item in topMenu" :key="item.label" :data="item" />
+                </div>
+            </div>
+            <div class="navigation__sub-menu">
+                <span class="navigation__sub-menu__title">Recruitment</span>
+                <div class="navigation__sub-menu__button-box">
+                    <BasicButton v-for="item in middleMenu" :key="item.label" :data="item" />
+                </div>
+            </div>
+            <div class="navigation__sub-menu">
+                <span class="navigation__sub-menu__title">Organization</span>
+                <div class="navigation__sub-menu__button-box">
+                    <BasicButton v-for="item in bottomMenu" :key="item.label" :data="item" />
+                </div>
             </div>
         </div>
-        <div class="navigation__sub-menu">
-            <span class="navigation__sub-menu__title">Recruitment</span>
-            <div class="navigation__sub-menu__button-box">
-                <BasicButton v-for="item in middleMenu" :key="item.label" :data="item"/>
-            </div>
-        </div>
-        <div class="navigation__sub-menu">
-            <span class="navigation__sub-menu__title">Organization</span>
-            <div class="navigation__sub-menu__button-box">
-                <BasicButton v-for="item in bottomMenu" :key="item.label" :data="item"/>
-            </div>
-        </div>
-    </div>
-  </BasicLayout>
+    </BasicLayout>
 </template>
 
 <script setup lang="ts">
-import BasicLayout from "@components/atoms/layout/BasicLayout.vue"
+import BasicLayout from '@components/atoms/layout/BasicLayout.vue'
 import BasicButton from '@components/atoms/button/BasicButton.vue'
-import { computed } from 'vue';
+import { computed } from 'vue'
 
+// 사실 네이밍 변수 하나만 가지고, 배열을 생성해도 되나
+// 강의 목적상 보다 직관적으로 전달하기 위해, icon과 label로 명명 지정
 const menu = [
     {
         icon: 'Dashboard',
-        label: 'Dashboard'
+        label: 'Dashboard',
     },
     {
-        icon: 'Index',
-        label: 'Index'
+        icon: 'Indox',
+        label: 'Indox',
     },
     {
         icon: 'Calendar',
-        label: 'Calendar'
+        label: 'Calendar',
     },
     {
         icon: 'Jobs',
-        label: 'Jobs'
+        label: 'Jobs',
     },
     {
         icon: 'Reference',
-        label: 'Reference'
+        label: 'Reference',
     },
     {
         icon: 'Document',
-        label: 'Document'
+        label: 'Document',
     },
     {
         icon: 'CareerSite',
-        label: 'CareerSite'
+        label: 'CareerSite',
     },
     {
         icon: 'Employee',
-        label: 'Employee'
+        label: 'Employee',
     },
     {
         icon: 'Structure',
-        label: 'Structure'
+        label: 'Structure',
     },
     {
         icon: 'Settings',
-        label: 'Settings'
+        label: 'Settings',
     },
-
 ]
-
 const topMenu = computed(() => {
-    return menu.slice(0, 3);
-});
+    return menu.slice(0, 3)
+})
 const middleMenu = computed(() => {
     return menu.slice(3, 7)
 })
@@ -91,10 +91,10 @@ const bottomMenu = computed(() => {
 
     width: 100%;
     height: calc(70vh - 40px);
-    
+
     gap: 14px;
 
-    &__sub-menu{
+    &__sub-menu {
         display: flex;
         flex-direction: column;
         align-items: flex-start;

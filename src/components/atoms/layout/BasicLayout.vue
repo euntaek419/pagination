@@ -10,9 +10,9 @@ import { toRefs } from 'vue'
 interface Props {
     theme?: string
 }
+
 const props = defineProps<Props>()
 const { theme } = toRefs(props)
-
 </script>
 
 <style lang="scss" scoped>
@@ -24,11 +24,10 @@ const { theme } = toRefs(props)
     padding: 20px;
 
     background-color: $color-white-000;
-    border-radius: 24px;
+    border-radius: 16px;
 
     &[layout-theme='blue'] {
         background-color: $color-blue-000;
     }
 }
-
 </style>
