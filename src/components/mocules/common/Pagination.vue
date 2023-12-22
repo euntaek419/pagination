@@ -1,13 +1,14 @@
 <template>
     <div class="pagination">
         <button class="pagination__button" @click="moveToPrev">
-            <img src="src/assets/icons/arrow-left.svg" alt="" />
+            <img src="..\pagination\src\assets\icons\arrow-left.svg" alt="" />
+            
         </button>
         <button v-for="index in pages[step]" :key="index" class="pagination__button" @click="movePage(index)" :class="{ active: index === page }">
             {{ index }}
         </button>
         <button class="pagination__button" @click="moveToNext">
-            <img src="src/assets/icons/arrow-right.svg" alt="" />
+            <img src="..\pagination\src\assets\icons\arrow-right.svg" alt="" />
         </button>
     </div>
 </template>
